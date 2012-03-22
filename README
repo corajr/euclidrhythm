@@ -1,0 +1,15 @@
+euclidrhythm is a(n uncreatively named) Euclidean rhythm generator designed for multitouch surfaces. It is based on the so-called Bjorklund algorithm, a close relative of Euclid's method for finding the greatest common divisor of two numbers. This algorithm effectively finds the most even distributions of pulses over a given number of discrete steps; when such patterns are played back as audio, they can produce a variety of rhythms that have been used in musics from around the world.
+
+Use with just a mouse is possible, but for full functionality, the program should be used with a TUIO tracker, such as the Kinect-based OpenNI2TUIO on OS X
+<http://www.patriciogonzalezvivo.com/blog/?p=289> or one of the many trackers found at <http://www.tuio.org/?software>. TuioPad <http://code.google.com/p/tuiopad/> and TUIOdroid <http://code.google.com/p/tuiodroid/> may be of interest to iOS and Android users.
+
+euclidrhythm uses the following Processing libraries:
+* tuioZones <http://jlyst.com/tz/>
+* theMidiBus <http://smallbutdigital.com/themidibus.php>
+* oscP5 <http://www.sojamo.de/libraries/oscP5/>
+
+Finally, Windows users may have to install a soundbank if their JRE does not include one: see <http://java.sun.com/products/java-media/sound/soundbanks.html>.
+
+References:
+Reese, Kristopher. "Generating Musical Rhythms." <http://kreese.net/blog/2010/03/27/generating-musical-rhythms/>.
+Toussaint, Godfried. "The Euclidean Algorithm Generates Traditional Musical Rhythms." <http://cgm.cs.mcgill.ca/~godfried/publications/banff.pdf>
