@@ -168,17 +168,18 @@ class BeatBox {
     }
     if (gestureScale != 1.0) {
 //      changeSteps(int(constrain(gestureScale * steps, 4, 32)));
-//      outerRadius = constrain(outerRadius * gestureScale, defaultOuterRadius * 0.9, defaultOuterRadius * 1.5);
 
       changeSteps(int(8 * constrain(sq(gestureScale), 0.25, 4)));
-      outerRadius = defaultOuterRadius * constrain(gestureScale, 0.9, 1.5);
+      outerRadius = constrain(outerRadius * gestureScale, defaultOuterRadius * 0.9, defaultOuterRadius * 1.75);
+//      outerRadius = defaultOuterRadius * constrain(gestureScale, 0.9, 2);
       innerRadius = outerRadius * defaultInnerRadiusRatio;
       
-//      originally changed volume with respect to size, but it proved more useful to
-//      velocity = int(constrain((outerRadius/defaultOuterRadius) * 64, 32, 127));
+      velocity = int(constrain((outerRadius/defaultOuterRadius) * 64, 32, 96));
     }
     if (outerGestureRotation != 0.0) {
-      changePulses(int(outerGestureRotation / 2 * steps));
+      int newPulses = int(outerGestureRotation / 2 * steps);
+      if (newPulses < 0) newPulses += steps;
+      changePulses(newPulses);
     }
   }
 

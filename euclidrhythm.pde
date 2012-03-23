@@ -34,16 +34,22 @@ int sliderBPM = 120;
 double interval = 0.0;
 boolean audio = true, bpmDragging = false;
 
-int defaultOuterRadius = 150;
-float defaultInnerRadiusRatio = 0.5;
+int defaultOuterRadius;
+float defaultInnerRadiusRatio = 0.33;
+
 
 int plusWidth = 15, plusXOffset = 20, plusYOffset = 80;
 
 void setup() {
   size(screenWidth, screenHeight);
-
-  // Processing 1.5:
+  // to run under Processing 1.5:
   // size(screen.width, screen.height);
+
+  defaultOuterRadius = width / 8;
+  plusWidth = width / 85;
+  plusXOffset = width / 64;
+  plusYOffset = height / 8;
+
 
   smooth();
   background(255);
@@ -418,10 +424,10 @@ void addNewBeatBox(int x, int y) {
 void displayHelp() {
   labels.add(new Label("euclidean rhythms\n\n"+
     "press + button to add\n" +
-    "drag/throw offscreen to remove\n" + 
-    "swipe to change instruments\n" +
-    "rotate to increase/decrease pulses\n" +
-    "pinch to increase/decrease steps", 10, 20, color(0), 450));
+    "drag offscreen to remove\n" + 
+    "swipe/double-click to change instrument\n" +
+    "rotate/right-click to change pulses\n" +
+    "pinch/alt-click to change steps", 10, 20, color(0), 450));
 }
 
 void clickEvent(String zName) {
