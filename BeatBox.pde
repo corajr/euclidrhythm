@@ -169,7 +169,7 @@ class BeatBox {
     if (gestureScale != 1.0) {
 //      changeSteps(int(constrain(gestureScale * steps, 4, 32)));
 
-      changeSteps(int(8 * constrain(sq(gestureScale), 0.25, 4)));
+      changeSteps(int(8 * constrain(sq(gestureScale), 0.25, 2)));
       outerRadius = constrain(outerRadius * gestureScale, defaultOuterRadius * 0.9, defaultOuterRadius * 1.75);
 //      outerRadius = defaultOuterRadius * constrain(gestureScale, 0.9, 2);
       innerRadius = outerRadius * defaultInnerRadiusRatio;
